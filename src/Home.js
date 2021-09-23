@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <h2>Home page for content</h2>
+            <h2>Home page for content!</h2>
             <button onClick={handleClick}>Resolve</button>
         </div>
     );
