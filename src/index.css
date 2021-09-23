@@ -12,18 +12,43 @@ code {
     monospace;
 }
 
-*{
-  margin: 0;
-}
-.navbar {
-  padding: 20px;
+
+.home {
   display: flex;
+  background-color: royalblue;
+  border: 3px solid yellow;
+  justify-content: space-around;
+  /* align-items: center; */
+  flex-wrap: wrap;
+
+  
+}
+.flex-item{
+  margin: 10px;
+  width: 200px;
+  border: 2px solid red;
+}
+.left{
+  background-color: saddlebrown;
+  flex-grow: 1;
+}
+.center{
+  background-color: salmon;
+  flex-grow: 1;
+}
+.right{
+  display: flex;
+  background-color: violet;
+  justify-content: center;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;}
-.content {
-   max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-    border: 2px solid red;
+  flex-direction: column;
+}
+button{
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 5px;
+ font-size: 15px;
+}
+.btn-block{
+  padding: 10px 38px;
 }
