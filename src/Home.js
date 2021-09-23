@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         console.log('click check');
     }
 
