@@ -1,7 +1,8 @@
 import Nav from './Nav';
 import Home from './Home';
-import Second from './Second';
+import Second from './Resolve';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Resolve from './Resolve';
 function App() {
   return (
     <Router>
@@ -13,7 +14,7 @@ function App() {
           <Home />
        </Route>
        <Route path='/resolve/:id'>
-          <Second />
+          <Resolve />
        </Route>
      </Switch>
       </div>

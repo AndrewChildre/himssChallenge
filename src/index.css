@@ -58,3 +58,10 @@ button{
 .btn-block{
   padding: 10px 38px;
 }
+.resolve-center{
+    display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
