@@ -12,33 +12,39 @@ code {
     monospace;
 }
 
+.navbar{
+  margin-left: 10px;
+}
+
 
 .home {
   display: flex;
-  background-color: royalblue;
-  border: 3px solid yellow;
-  justify-content: space-around;
-  /* align-items: center; */
+  /* background-color: royalblue; */
+  margin: 10px;
+  border: 3px solid black;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+
 
   
 }
 .flex-item{
   margin: 10px;
-  width: 200px;
-  border: 2px solid red;
+  /* width: 200px; */
+  /* border: 2px solid red; */
 }
 .left{
-  background-color: saddlebrown;
+  /* background-color: saddlebrown; */
   flex-grow: 1;
 }
 .center{
-  background-color: salmon;
-  flex-grow: 1;
+  /* background-color: salmon; */
+  flex-grow: 2;
 }
 .right{
   display: flex;
-  background-color: violet;
+  /* background-color: violet; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
