@@ -1,9 +1,18 @@
-import React from 'react';
+import  {React, useState}from 'react';
 import { useParams, Link } from 'react-router-dom';
 import useFetch from './useFetch';
 const Resolve = () => {
         const {id} = useParams()
         const {data} = useFetch('http://localhost:8003/elements/' + id)
+
+        const [resolveMe, setResolveMe] = useState('open')
+        const [resolveMessage, setResolveMessage] = useState('')
+
+        const handleSubmit = (e) => {
+            e.preventDefault()
+            const updatedStatus = {resolveMe, resolveMessage }
+            console.log(updatedStatus);
+        }
     return (
 			<div>
 				{data && (
@@ -15,27 +24,35 @@ const Resolve = () => {
 								<Link to='/'>Details</Link>
 							</div>
 
-                            	<form>
+                            	<form onSubmit={handleSubmit}>
 							<div className='center flex-item resolve-center'>
                                 <label>State:</label>
-										<select>
+										<select
+                                        value={resolveMe}
+                                        onChange={(e) => setResolveMe(e.target.value)}
+                                        >
 										<option value='open'>Open</option>
 										<option value='resolved'>Resolved</option>
 										<option value='blocked'>Blocked</option>
 									</select>
                                     <label>Message:</label>
-                                    <textarea></textarea>
+                                    <textarea
+                                        value={resolveMessage}
+                                        onChange={(e) => setResolveMessage(e.target.value)}
+                                    ></textarea>
 									</div>
                                     
-								</form>
                                 			<div className='right flex-item'>
-										<Link to={'/'}>
 											<button>Update</button>
-										</Link>
+										{/* <Link to={'/'}>
+										</Link> */}
                                         	
 						
 						</div>
+								</form>
 							</div>
+                        <p>{resolveMe}</p>
+                        <p>{resolveMessage}</p>
 								
 						
 					</div>
