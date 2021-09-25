@@ -10,9 +10,7 @@ const Second = () => {
           <div>
               <h2>{data.sourceIdentityId}</h2>
           </div>
-          )
-        
-            
+          )  
           }
         </div>
     );
