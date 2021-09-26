@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 const DataList = ({ sourceData }) => {
 
-    const handleResolve = () => {
-    
-    }
+  
 
 	return (
 		<div>
@@ -21,7 +19,7 @@ const DataList = ({ sourceData }) => {
 					</div>
 					<div className='right flex-item'>
 						<Link to={`/resolve/${data1.id}`}>
-							<button onClick={handleResolve}>Resolve</button>
+							<button>Resolve</button>
 						</Link>
 						<button className='btn-block'>Block</button>
 					</div>
