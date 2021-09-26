@@ -1,7 +1,7 @@
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Nav from './Nav';
 import Home from './Home';
-
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Block from './Block'
 import Resolve from './Resolve';
 
 function App() {
@@ -17,7 +17,9 @@ function App() {
        <Route path='/resolve/:id'>
           <Resolve />
        </Route>
-     
+         <Route path='/block/:id'>
+          <Block />
+       </Route>
      </Switch>
       </div>
     </div>

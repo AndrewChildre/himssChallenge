@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 const DataList = ({ sourceData }) => {
-
-  
-
 	return (
 		<div>
 			{sourceData.map((data1) => (
@@ -21,7 +19,10 @@ const DataList = ({ sourceData }) => {
 						<Link to={`/resolve/${data1.id}`}>
 							<button>Resolve</button>
 						</Link>
-						<button className='btn-block'>Block</button>
+						<Link to={`/block/${data1.id}`}>
+							<button className='btn-block'>Block</button>
+						</Link>
+						{/* <button className='btn-block'>Block</button> */}
 					</div>
 				</div>
 			))}
