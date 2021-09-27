@@ -14,7 +14,7 @@ const Block = () => {
         	fetch('http://localhost:8003/elements/' + id, {
 						method: 'PATCH',
 						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ state: 'BLOCKED' }),
+						body: JSON.stringify({ state: blockState }),
 					});
 	};
 

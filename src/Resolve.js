@@ -8,8 +8,8 @@ const Resolve = () => {
 	const { id } = useParams();
 	const { data } = useFetch('http://localhost:8003/elements/' + id);
 
-        const [ticketState, setTicketState] = useState('open')
-
+        const [ticketState, setTicketState] = useState('OPEN')
+        const history = useHistory()
         const handleSubmit = (e) => {
                     e.preventDefault()
                     const update = { ticketState }
@@ -25,8 +25,9 @@ const Resolve = () => {
                       fetch('http://localhost:8003/elements/'+id, {
                             method: 'PATCH',
                         headers: {"Content-Type": "application/json"},
-                        body: JSON.stringify({state: "CLOSED"})
-                      })
+                        body: JSON.stringify({state: ticketState})
+                    })
+                    history.push('/')
                         
                     }
                     )

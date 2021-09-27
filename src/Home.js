@@ -10,11 +10,15 @@ const Home = () => {
  
 
     return (
-        <div>
-        { sourceData && <DataList sourceData={sourceData}/>}
-        </div>
-				
-				
+			<div>
+				{sourceData && (
+					<DataList
+						sourceData={sourceData.filter(
+							(data1) => data1.state === ('OPEN')
+						)}
+					/>
+				)}
+			</div>
 		);
 };
 
