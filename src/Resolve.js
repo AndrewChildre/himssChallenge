@@ -2,36 +2,29 @@ import { React, useState } from 'react';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import useFetch from './useFetch';
 
-
-
 const Resolve = () => {
 	const { id } = useParams();
 	const { data } = useFetch('http://localhost:8003/elements/' + id);
 
-        const [ticketState, setTicketState] = useState('OPEN')
-        const history = useHistory()
-        const handleSubmit = (e) => {
-                    e.preventDefault()
-                    const update = { ticketState }
+	const [ticketState, setTicketState] = useState('OPEN');
+	const history = useHistory();
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const update = { ticketState };
 
-
-                    fetch('http://localhost:8003/reports', {
-                        method: 'PUT',
-                        headers: {"Content-Type": "application/json"},
-                        body: JSON.stringify(update)
-                    })
-                    .then(
-                    () => {
-                      fetch('http://localhost:8003/elements/'+id, {
-                            method: 'PATCH',
-                        headers: {"Content-Type": "application/json"},
-                        body: JSON.stringify({state: ticketState})
-                    })
-                    history.push('/')
-                        
-                    }
-                    )
-        }
+		fetch('http://localhost:8003/reports', {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(update),
+		}).then(() => {
+			fetch('http://localhost:8003/elements/' + id, {
+				method: 'PATCH',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ state: ticketState }),
+			});
+			history.push('/');
+		});
+	};
 
 	return (
 		<div>
@@ -47,19 +40,19 @@ const Resolve = () => {
 						<form onSubmit={handleSubmit}>
 							<div className='center flex-item resolve-center'>
 								<label>State:</label>
-								<select value={ticketState}
-                                onChange={(e) => setTicketState(e.target.value)}>
+								<select
+									value={ticketState}
+									onChange={(e) => setTicketState(e.target.value)}>
 									<option value='OPEN'>Open</option>
 									<option value='CLOSED'>Closed</option>
 								</select>
 								<label>Message:</label>
 								<textarea></textarea>
 							</div>
-                                <div className='right flex-item'>
+							<div className='right flex-item'>
 								<button>Update</button>
 							</div>
-                            <p>{ticketState}</p>
-                           
+							<p>{ticketState}</p>
 						</form>
 					</div>
 				</div>
