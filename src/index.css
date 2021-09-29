@@ -18,12 +18,14 @@ code {
 
 .home {
 	display: flex;
-	/* background-color: royalblue; */
+	background-color: lightgray;
 	margin: 10px;
 	border: 3px solid black;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
+  font-size: 17px;
+  font-weight: 400;
 }
 .flex-item {
 	margin: 10px;
@@ -31,12 +33,14 @@ code {
 	/* border: 2px solid red; */
 }
 .left {
+  margin: 20px;
 	/* background-color: saddlebrown; */
 	flex-grow: 1;
 }
 .center {
 	/* background-color: salmon; */
 	flex-grow: 2;
+ 
 }
 .right {
 	display: flex;
@@ -59,4 +63,21 @@ button {
   justify-content: center;
 	align-items: center;
 	flex-direction: column;
+  
+}
+.resolve-div{
+  background-color: lightgray;
+}
+.resolve-content{
+  font-size: 20px;
+}
+label{margin: 8px;
+font-weight: bold;
+font-size: 20px;
+}
+select{font-size: 18px;
+padding: 6px 2px;
+}
+.block-content {
+ font-size: 20px;
 }

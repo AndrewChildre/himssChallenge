@@ -31,10 +31,13 @@ const Resolve = () => {
 		<div>
 			{data && (
 				<div>
-					<div className='home' key={data.id}>
+					<div className='home resolve-div' key={data.id}>
 						<div className='left flex-item'>
-							<p>Report Id: {data.payload.reportId} </p>
-							<p>Type: {data.payload.reportType}</p>
+							<p className='resolve-content'>
+								Report Id: {data.payload.reportId}{' '}
+							</p>
+							<p className='resolve-content'>Type: {data.payload.reportType}</p>
+							<p className='resolve-content'>Status: {ticketState} </p>
 							<Link to='/'>Details</Link>
 						</div>
 
@@ -53,7 +56,6 @@ const Resolve = () => {
 							<div className='right flex-item'>
 								<button>Update</button>
 							</div>
-							<p>{ticketState}</p>
 						</form>
 					</div>
 				</div>

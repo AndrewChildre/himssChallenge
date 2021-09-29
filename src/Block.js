@@ -23,11 +23,13 @@ const Block = () => {
 		<div>
 			{data && (
 				<div>
-					<div className='home' key={data.id}>
+					<div className='home block-div' key={data.id}>
 						<div className='left flex-item'>
-							<h1>BLOCKED</h1>
-							<p>Report Id: {data.payload.reportId} </p>
-							<p>Type: {data.payload.reportType}</p>
+							<p className='block-content'>
+								Report Id: {data.payload.reportId}{' '}
+							</p>
+							<p className='block-content'>Type: {data.payload.reportType}</p>
+							<p className='block-content'>Status: {blockState}</p>
 							<Link to='/'>Details</Link>
 						</div>
 
@@ -46,7 +48,6 @@ const Block = () => {
 							<div className='right flex-item'>
 								<button>Update</button>
 							</div>
-							<p>{blockState}</p>
 						</form>
 					</div>
 				</div>
