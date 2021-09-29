@@ -4,20 +4,22 @@ import useFetch from './useFetch';
 
 const Resolve = () => {
 	const { id } = useParams();
-	const { data } = useFetch('http://localhost:8003/elements/' + id);
+	const { data } = useFetch('http://localhost:3000/elements/' + id);
 
 	const [ticketState, setTicketState] = useState('OPEN');
 	const history = useHistory();
+
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const update = { ticketState };
 
-		fetch('http://localhost:8003/reports', {
+		fetch('http://localhost:3000/reports', {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(update),
 		}).then(() => {
-			fetch('http://localhost:8003/elements/' + id, {
+			fetch('http://localhost:3000/elements/' + id, {
 				method: 'PATCH',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ state: ticketState }),

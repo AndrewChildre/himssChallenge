@@ -4,14 +4,14 @@ import useFetch from './useFetch';
 
 const Block = () => {
 	const { id } = useParams();
-	const { data } = useFetch('http://localhost:8003/elements/' + id);
+	const { data } = useFetch('http://localhost:3000/elements/' + id);
 
 	const [blockState, setBlockState] = useState('UNBLOCKED');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-        	fetch('http://localhost:8003/elements/' + id, {
+        	fetch('http://localhost:3000/elements/' + id, {
 						method: 'PATCH',
 						headers: { 'Content-Type': 'application/json' },
 						body: JSON.stringify({ state: blockState }),
