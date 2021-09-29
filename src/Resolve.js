@@ -9,7 +9,6 @@ const Resolve = () => {
 	const [ticketState, setTicketState] = useState('OPEN');
 	const history = useHistory();
 
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const update = { ticketState };

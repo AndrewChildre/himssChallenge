@@ -22,7 +22,6 @@ const DataList = ({ sourceData }) => {
 						<Link to={`/block/${data1.id}`}>
 							<button className='btn-block'>Block</button>
 						</Link>
-						{/* <button className='btn-block'>Block</button> */}
 					</div>
 				</div>
 			))}

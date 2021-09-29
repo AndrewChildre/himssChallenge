@@ -7,15 +7,16 @@ const Block = () => {
 	const { data } = useFetch('http://localhost:3000/elements/' + id);
 
 	const [blockState, setBlockState] = useState('UNBLOCKED');
-
+	const history = useHistory();
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-        	fetch('http://localhost:3000/elements/' + id, {
-						method: 'PATCH',
-						headers: { 'Content-Type': 'application/json' },
-						body: JSON.stringify({ state: blockState }),
-					});
+		fetch('http://localhost:3000/elements/' + id, {
+			method: 'PATCH',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ state: blockState }),
+		});
+		history.push('/');
 	};
 
 	return (
@@ -24,7 +25,7 @@ const Block = () => {
 				<div>
 					<div className='home' key={data.id}>
 						<div className='left flex-item'>
-                            <h1>BLOCKED</h1>
+							<h1>BLOCKED</h1>
 							<p>Report Id: {data.payload.reportId} </p>
 							<p>Type: {data.payload.reportType}</p>
 							<Link to='/'>Details</Link>
