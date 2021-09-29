@@ -24,27 +24,21 @@ code {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-  font-size: 17px;
-  font-weight: 400;
+	font-size: 17px;
+	font-weight: 400;
 }
 .flex-item {
 	margin: 10px;
-	/* width: 200px; */
-	/* border: 2px solid red; */
 }
 .left {
-  margin: 20px;
-	/* background-color: saddlebrown; */
+	margin: 20px;
 	flex-grow: 1;
 }
 .center {
-	/* background-color: salmon; */
 	flex-grow: 2;
- 
 }
 .right {
 	display: flex;
-	/* background-color: violet; */
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -60,24 +54,25 @@ button {
 }
 .resolve-center {
 	display: flex;
-  justify-content: center;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-  
 }
-.resolve-div{
-  background-color: lightgray;
+.resolve-div {
+	background-color: lightgray;
 }
-.resolve-content{
-  font-size: 20px;
+.resolve-content {
+	font-size: 20px;
 }
-label{margin: 8px;
-font-weight: bold;
-font-size: 20px;
+label {
+	margin: 8px;
+	font-weight: bold;
+	font-size: 20px;
 }
-select{font-size: 18px;
-padding: 6px 2px;
+select {
+	font-size: 18px;
+	padding: 6px 2px;
 }
 .block-content {
- font-size: 20px;
+	font-size: 20px;
 }
